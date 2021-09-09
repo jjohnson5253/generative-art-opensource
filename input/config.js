@@ -124,18 +124,18 @@ const description = "Bear rugs not drugs";
 // the id of the nft will be added to this url, in the example e.g. https://hashlips/nft/1 for NFT with id 1
 const baseImageUri = "";
 // id for edition to start from
-const startEditionFrom = 1;
+const startEditionFrom = 0;
 // amount of NFTs to generate in edition
-const editionSize = 10;
+const editionSize = 9;
 // prefix to add to edition dna ids (to distinguish dna counts from different generation processes for the same collection)
 const editionDnaPrefix = 0
 
 // create required weights
 // for each weight, call 'addRarity' with the id and from which to which element this rarity should be applied
 let rarityWeights = [
-  addRarity('super_rare', 1, 1),
-  addRarity('rare', 2, 5),
-  addRarity('original', 5, 10)
+  addRarity('super_rare', 0, 0),
+  addRarity('rare', 1, 4),
+  addRarity('original', 5, 9)
 ];
 
 // create required layers
@@ -152,9 +152,9 @@ const layers = [
 
 // provide any specific percentages that are required for a given layer and rarity level
 // all provided options are used based on their percentage values to decide which layer to select from
-addRarityPercentForLayer('super_rare', 'ball', { 'super_rare': 33, 'rare': 33, 'original': 33 });
-addRarityPercentForLayer('super_rare', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
-addRarityPercentForLayer('original', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
+addRarityPercentForLayer('super_rare', 'ball', { 'super_rare': 0, 'rare': 0, 'original': 100 }); // make super rare use an original ball 100 of time
+//addRarityPercentForLayer('super_rare', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
+//addRarityPercentForLayer('original', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
 
 module.exports = {
   layers,

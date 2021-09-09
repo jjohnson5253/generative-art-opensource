@@ -251,6 +251,7 @@ const startCreating = async () => {
       saveImage(editionCount);
       let nftMetadata = generateMetadata(newDna, editionCount, attributesList);
       metadataList.push(nftMetadata)
+      fs.writeFileSync("./output/"+editionCount.toString()+".json", JSON.stringify(nftMetadata));
       console.log('- metadata: ' + JSON.stringify(nftMetadata));
       console.log('- edition ' + editionCount + ' created.');
       console.log();
