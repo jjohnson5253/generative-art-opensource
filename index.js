@@ -14,6 +14,16 @@ const console = require("console");
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext("2d");
 
+let filesList = [{
+  uri: "image.png", 
+  type: "image.png",},
+];
+
+let creatorsList = [{
+  address: "254252_some_address_234234234234",
+  share: 10,},
+];
+
 // saves the generated image to the output folder, using the edition count as the name
 const saveImage = (_editionCount) => {
   fs.writeFileSync(
@@ -47,13 +57,17 @@ const drawBackground = () => {
 const generateMetadata = (_dna, _edition, _attributesList) => {
   let dateTime = Date.now();
   let tempMetadata = {
-    dna: _dna.join(""),
-    name: `#${_edition}`,
+    name: `Bear Rug ${_edition}`,
+    symbol: ``,
     description: description,
-    image: `${baseImageUri}/${_edition}`,
-    edition: _edition,
-    date: dateTime,
+    seller_fee_basis_points: 0,
+    image: `image.png`,
     attributes: _attributesList,
+    collection: {name: `Bear Rugs Gen 1`},
+    properties: {
+      files: filesList,
+      creators: creatorsList,
+    },
   };
   return tempMetadata;
 };
@@ -61,9 +75,10 @@ const generateMetadata = (_dna, _edition, _attributesList) => {
 // prepare attributes for the given element to be used as metadata
 const getAttributeForElement = (_element) => {
   let selectedElement = _element.layer.selectedElement;
+  //console.log(_element.layer.layerName)
   let attribute = {
-    name: selectedElement.name,
-    rarity: selectedElement.rarity,
+    trait_type: _element.layer.layerName,
+    value: selectedElement.name,
   };
   return attribute;
 };
@@ -97,6 +112,7 @@ const constructLayerToDna = (_dna = [], _layers = [], _rarity) => {
       location: layer.location,
       position: layer.position,
       size: layer.size,
+      layerName: layer.id,
       selectedElement: selectedElement,
     };
   });
