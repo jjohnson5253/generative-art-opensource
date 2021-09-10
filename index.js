@@ -21,7 +21,7 @@ let filesList = [{
 
 let creatorsList = [{
   address: "254252_some_address_234234234234",
-  share: 10,},
+  share: 100,},
 ];
 
 // saves the generated image to the output folder, using the edition count as the name
