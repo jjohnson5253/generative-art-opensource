@@ -203,6 +203,7 @@ const startCreating = async () => {
 
   // create NFTs from startEditionFrom to editionSize
   let editionCount = startEditionFrom;
+  //let editionCount = 9;
   while (editionCount <= editionSize) {
     console.log('-----------------')
     console.log('creating NFT %d of %d', editionCount, editionSize);
@@ -246,7 +247,7 @@ const startCreating = async () => {
         attributesList.push(getAttributeForElement(element));
       });
       // add an image signature as the edition count to the top left of the image
-      signImage(`#${editionCount}`);
+      //signImage(`#${editionCount}`);
       // write the image to the output directory
       saveImage(editionCount);
       let nftMetadata = generateMetadata(newDna, editionCount, attributesList);
@@ -259,7 +260,7 @@ const startCreating = async () => {
     dnaListByRarity[rarity].push(newDna);
     editionCount++;
   }
-  writeMetaData(JSON.stringify(metadataList));
+  //writeMetaData(JSON.stringify(metadataList));
 };
 
 // Initiate code

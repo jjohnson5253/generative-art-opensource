@@ -115,9 +115,9 @@ const addRarityPercentForLayer = (_rarityId, _layerId, _percentages) => {
  *************************************************************/
 
 // image width in pixels
-const width = 1000;
+const width = 2048;
 // image height in pixels
-const height = 1000;
+const height = 2048;
 // description for NFT in metadata file
 const description = "Bear rugs not drugs";
 // base url to use in metadata file
@@ -133,28 +133,36 @@ const editionDnaPrefix = 0
 // create required weights
 // for each weight, call 'addRarity' with the id and from which to which element this rarity should be applied
 let rarityWeights = [
-  addRarity('super_rare', 0, 0),
-  addRarity('rare', 1, 4),
-  addRarity('original', 5, 9)
+  addRarity('legendary', 9, 9),
+  addRarity('rare', 7, 8),
+  addRarity('uncommon', 4, 6),
+  addRarity('common', 0, 3)
 ];
 
 // create required layers
 // for each layer, call 'addLayer' with the id and optionally the positioning and size
 // the id would be the name of the folder in your input directory, e.g. 'ball' for ./input/ball
 const layers = [
-  addLayer('ball', { x: 0, y: 0 }, { width: width, height: height }),
-  addLayer('eye color'),
-  addLayer('iris'),
-  addLayer('shine'),
-  addLayer('bottom lid'),
-  addLayer('top lid')
+  addLayer('background', { x: 0, y: 0 }, { width: width, height: height }),
+  addLayer('floor'),
+  addLayer('bear'),
+  addLayer('Burt'),
+  addLayer('earrings'),
+  addLayer('eyes'),
+  addLayer('glasses'),
+  addLayer('hat'),
+  addLayer('mouth'),
+  addLayer('nose')
 ];
 
 // provide any specific percentages that are required for a given layer and rarity level
 // all provided options are used based on their percentage values to decide which layer to select from
-addRarityPercentForLayer('super_rare', 'ball', { 'super_rare': 0, 'rare': 0, 'original': 100 }); // make super rare use an original ball 100 of time
+//addRarityPercentForLayer('super_rare', 'ball', { 'super_rare': 0, 'rare': 0, 'original': 100 }); // make super rare use an original ball 100 of time
 //addRarityPercentForLayer('super_rare', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
 //addRarityPercentForLayer('original', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
+
+// burt should VERY rarely occur. Original contains no burt
+addRarityPercentForLayer('legendary', 'Burt', { 'legendary': 10, 'rare': 0, 'uncommon': 0, 'common': 90 });
 
 module.exports = {
   layers,
