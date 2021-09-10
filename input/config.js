@@ -149,10 +149,10 @@ const layers = [
   addLayer('Burt'),
   addLayer('earrings'),
   addLayer('eyes'),
-  addLayer('glasses'),
+  addLayer('nose'),
   addLayer('hat'),
+  addLayer('glasses'),
   addLayer('mouth'),
-  addLayer('nose')
 ];
 
 // provide any specific percentages that are required for a given layer and rarity level
@@ -161,8 +161,10 @@ const layers = [
 //addRarityPercentForLayer('super_rare', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
 //addRarityPercentForLayer('original', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
 
+// TODO: maybe make a Burt rarity level to ensure they have burts... but then would have to add that folder to all directories?
 // burt should VERY rarely occur. Original contains no burt
-addRarityPercentForLayer('legendary', 'Burt', { 'legendary': 10, 'rare': 0, 'uncommon': 0, 'common': 90 });
+addRarityPercentForLayer('legendary', 'Burt', { 'legendary': 100, 'rare': 0, 'uncommon': 0, 'common': 0 });
+//addRarityPercentForLayer('common', 'Burt', { 'legendary': 100, 'rare': 0, 'uncommon': 0, 'common': 0 }); // ex showing how to give all commons a legendary item
 
 module.exports = {
   layers,
