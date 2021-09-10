@@ -194,7 +194,7 @@ const startCreating = async () => {
   console.log('start creating NFTs.')
 
   // clear meta data from previous run
-  writeMetaData("");
+  //writeMetaData("");
 
   // prepare dnaList object
   rarityWeights.forEach((rarityWeight) => {
