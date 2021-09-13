@@ -164,7 +164,22 @@ const layers = [
 // TODO: maybe make a Burt rarity level to ensure they have burts... but then would have to add that folder to all directories?
 // burt should VERY rarely occur. Original contains no burt
 addRarityPercentForLayer('legendary', 'Burt', { 'legendary': 100, 'rare': 0, 'uncommon': 0, 'common': 0 });
-//addRarityPercentForLayer('common', 'Burt', { 'legendary': 100, 'rare': 0, 'uncommon': 0, 'common': 0 }); // ex showing how to give all commons a legendary item
+
+addRarityPercentForLayer('legendary', 'hat', { 'legendary': 1, 'rare': 10, 'uncommon': 39, 'common': 50 });
+addRarityPercentForLayer('legendary', 'glasses', { 'legendary': 1, 'rare': 10, 'uncommon': 39, 'common': 50 });
+addRarityPercentForLayer('legendary', 'earrings', { 'legendary': 1, 'rare': 10, 'uncommon': 39, 'common': 50 });
+
+addRarityPercentForLayer('rare', 'hat', { 'legendary': 1, 'rare': 10, 'uncommon': 39, 'common': 50 });
+addRarityPercentForLayer('rare', 'glasses', { 'legendary': 1, 'rare': 10, 'uncommon': 39, 'common': 50 });
+addRarityPercentForLayer('rare', 'earrings', { 'legendary': 1, 'rare': 10, 'uncommon': 39, 'common': 50 });
+
+addRarityPercentForLayer('uncommon', 'hat', { 'legendary': 1, 'rare': 10, 'uncommon': 39, 'common': 50 });
+addRarityPercentForLayer('uncommon', 'glasses', { 'legendary': 1, 'rare': 10, 'uncommon': 39, 'common': 50 });
+addRarityPercentForLayer('uncommon', 'earrings', { 'legendary': 1, 'rare': 10, 'uncommon': 39, 'common': 50 });
+
+addRarityPercentForLayer('common', 'hat', { 'legendary': 1, 'rare': 10, 'uncommon': 39, 'common': 50 });
+addRarityPercentForLayer('common', 'glasses', { 'legendary': 1, 'rare': 10, 'uncommon': 39, 'common': 50 });
+addRarityPercentForLayer('common', 'earrings', { 'legendary': 1, 'rare': 10, 'uncommon': 39, 'common': 50 });
 
 module.exports = {
   layers,
