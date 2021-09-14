@@ -202,15 +202,15 @@ addRarityPercentForLayer('rare', 'mouth', {'super legendary': 1.2, 'legendary': 
 
 addRarityPercentForLayer('uncommon', 'background', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
 addRarityPercentForLayer('uncommon', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
-addRarityPercentForLayer('uncommon', 'floor', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 16, 'uncommon': 75, 'common': 7 });
-addRarityPercentForLayer('uncommon', 'bear', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 16, 'uncommon': 75, 'common': 7 });;
+addRarityPercentForLayer('uncommon', 'floor', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
+addRarityPercentForLayer('uncommon', 'bear', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
 addRarityPercentForLayer('uncommon', 'figure', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 0, 'common': 100 });
 addRarityPercentForLayer('uncommon', 'earrings', {'super legendary': 1, 'legendary': 5, 'rare': 7, 'uncommon': 37, 'common': 50 });
-addRarityPercentForLayer('uncommon', 'eyes', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 16, 'uncommon': 75, 'common': 7 });
-addRarityPercentForLayer('uncommon', 'nose', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 16, 'uncommon': 75, 'common': 7 });
+addRarityPercentForLayer('uncommon', 'eyes', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
+addRarityPercentForLayer('uncommon', 'nose', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
 addRarityPercentForLayer('uncommon', 'hat', {'super legendary': 1, 'legendary': 5, 'rare': 7, 'uncommon': 37, 'common': 50 });
 addRarityPercentForLayer('uncommon', 'glasses', {'super legendary': 1, 'legendary': 5, 'rare': 7, 'uncommon': 37, 'common': 50 });
-addRarityPercentForLayer('uncommon', 'mouth', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 16, 'uncommon': 75, 'common': 7 });
+addRarityPercentForLayer('uncommon', 'mouth', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
 
 addRarityPercentForLayer('common', 'background', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
 addRarityPercentForLayer('common', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
