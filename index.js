@@ -153,6 +153,8 @@ const createDna = (_layers, _rarity) => {
     let num = Math.floor(Math.random() * layer.elementIdsForRarity[_rarity].length);
     if (_rarityWeight && _rarityWeight.layerPercent[layer.id]) {
 
+      console.log('for layer:')
+      console.log(layer.id)
       // if there is a layerPercent defined, we want to identify which dna to actually use here (instead of only picking from the same rarity)
       let _rarityForLayer = getRandomRarity(_rarityWeight.layerPercent[layer.id]);
       
