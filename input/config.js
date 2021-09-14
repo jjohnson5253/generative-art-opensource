@@ -133,11 +133,11 @@ const editionDnaPrefix = 0
 // create required weights
 // for each weight, call 'addRarity' with the id and from which to which element this rarity should be applied
 let rarityWeights = [
-  addRarity('super legendary', 980, 999),
-  addRarity('legendary', 850, 979),
-  addRarity('rare', 650, 849),
-  addRarity('uncommon', 400, 649),
-  addRarity('common', 0, 399)
+  addRarity('super legendary', 0, 30),
+  addRarity('legendary', 31, 100),
+  addRarity('rare', 101, 250),
+  addRarity('uncommon', 251, 500),
+  addRarity('common', 500, 999)
 ];
 
 // create required layers
@@ -214,17 +214,17 @@ addRarityPercentForLayer('uncommon', 'hat', {'super legendary': 1, 'legendary': 
 addRarityPercentForLayer('uncommon', 'glasses', {'super legendary': 1, 'legendary': 5, 'rare': 7, 'uncommon': 37, 'common': 50 });
 addRarityPercentForLayer('uncommon', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 16, 'uncommon': 75, 'common': 7 });
 
-addRarityPercentForLayer('common', 'background', {'super legendary': 0.4, 'legendary': 0.6, 'rare' 7: , 'uncommon': 17, 'common': 75 });
+addRarityPercentForLayer('common', 'background', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
 addRarityPercentForLayer('common', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
-addRarityPercentForLayer('common', 'floor', {'super legendary': 0.4, 'legendary': 0.6, 'rare' 7: , 'uncommon': 17, 'common': 75 });
-addRarityPercentForLayer('common', 'bear', {'super legendary': 0.4, 'legendary': 0.6, 'rare' 7: , 'uncommon': 17, 'common': 75 });
+addRarityPercentForLayer('common', 'floor', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
+addRarityPercentForLayer('common', 'bear', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
 addRarityPercentForLayer('common', 'figure', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 0, 'common': 100 });
 addRarityPercentForLayer('common', 'earrings', {'super legendary': 0.1, 'legendary': 0.9, 'rare': 10, 'uncommon': 39, 'common': 50 });
-addRarityPercentForLayer('common', 'eyes', {'super legendary': 0.4, 'legendary': 0.6, 'rare' 7: , 'uncommon': 17, 'common': 75 });
-addRarityPercentForLayer('common', 'nose', {'super legendary': 0.4, 'legendary': 0.6, 'rare' 7: , 'uncommon': 17, 'common': 75 });
+addRarityPercentForLayer('common', 'eyes', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
+addRarityPercentForLayer('common', 'nose', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
 addRarityPercentForLayer('common', 'hat', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 0, 'common': 100 });
 addRarityPercentForLayer('common', 'glasses', {'super legendary': 0.1, 'legendary': 0.9, 'rare': 10, 'uncommon': 39, 'common': 50 });
-addRarityPercentForLayer('common', 'mouth', {'super legendary': 0.4, 'legendary': 0.6, 'rare' 7: , 'uncommon': 17, 'common': 75 });
+addRarityPercentForLayer('common', 'mouth', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
 
 module.exports = {
   layers,
