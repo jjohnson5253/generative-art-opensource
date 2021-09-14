@@ -214,12 +214,18 @@ const getRarity = (_editionCount) => {
     // prepare array to iterate over
     rarityForEdition = [];
     rarityWeights.forEach((rarityWeight) => {
+
       for (let i = rarityWeight.from; i <= rarityWeight.to; i++) {
         rarityForEdition.push(rarityWeight.value);
       }
     });
   }
-  return rarityForEdition[editionSize - _editionCount];
+  console.log('rarity for edition')
+  console.log(rarityForEdition[0])
+  console.log(editionSize)
+  console.log(_editionCount)
+
+  return rarityForEdition[_editionCount];
 };
 
 const writeMetaData = (_data) => {
