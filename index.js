@@ -13,6 +13,8 @@ const {
 const console = require("console");
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext("2d");
+//const plainBgStartIdx = 11; // first plain background
+//const plainBgEndIdx = 15; // last plain background
 
 let filesList = [{
   uri: "image.png", 
@@ -145,11 +147,56 @@ const getRandomRarity = (_rarityOptions) => {
 const createDna = (_layers, _rarity) => {
   let randNum = [];
   let _rarityWeight = rarityWeights.find(rw => rw.value === _rarity);
+  let isCommonBackground = false;
+  let isBurt = false;
   _layers.forEach((layer) => {
     let num = Math.floor(Math.random() * layer.elementIdsForRarity[_rarity].length);
     if (_rarityWeight && _rarityWeight.layerPercent[layer.id]) {
+
       // if there is a layerPercent defined, we want to identify which dna to actually use here (instead of only picking from the same rarity)
       let _rarityForLayer = getRandomRarity(_rarityWeight.layerPercent[layer.id]);
+      
+      if (layer.id == 'background')
+      {
+        console.log('rarity for background');
+        console.log(_rarityForLayer);
+        if (_rarityForLayer == 'common')
+        {
+          isCommonBackground = true;
+        }
+      }
+      // change rarity for art layer if background is plain
+      if (layer.id == 'art')
+      {
+        if (isCommonBackground)
+        {
+          console.log('changing rarity for art to 100')
+          rarityPercent = [
+            { id: 'super legendary', percent: 0 },
+            { id: 'legendary', percent: 0 },
+            { id: 'rare', percent: 0 },
+            { id: 'uncommon', percent: 50 },
+            { id: 'common', percent: 50 }
+          ]
+        }
+        else
+        {
+          console.log('changing rarity for art to 0')
+          // if not plain background, give 100% chance of no painting
+          rarityPercent = [
+            { id: 'super legendary', percent: 0 },
+            { id: 'legendary', percent: 0 },
+            { id: 'rare', percent: 0 },
+            { id: 'uncommon', percent: 100 },
+            { id: 'common', percent: 0 }
+          ]
+        }
+        _rarityForLayer = getRandomRarity(rarityPercent);
+        console.log('rarity for layer');
+        console.log(_rarityForLayer);
+      }
+
+      // get random index in rarity folder
       num = Math.floor(Math.random() * layer.elementIdsForRarity[_rarityForLayer].length);
       randNum.push(layer.elementIdsForRarity[_rarityForLayer][num]);
     } else {
