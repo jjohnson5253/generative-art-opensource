@@ -124,7 +124,7 @@ const description = "Bear rugs not drugs";
 // the id of the nft will be added to this url, in the example e.g. https://hashlips/nft/1 for NFT with id 1
 const baseImageUri = "";
 // id for edition to start from
-const startEditionFrom = 101;
+const startEditionFrom = 0;
 // amount of NFTs to generate in edition
 const editionSize = 999;
 // prefix to add to edition dna ids (to distinguish dna counts from different generation processes for the same collection)
