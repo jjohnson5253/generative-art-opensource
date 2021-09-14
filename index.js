@@ -315,7 +315,7 @@ const startCreating = async () => {
     dnaListByRarity[rarity].push(newDna);
     editionCount++;
   }
-  //writeMetaData(JSON.stringify(metadataList));
+  writeMetaData(JSON.stringify(metadataList));
 };
 
 // Initiate code

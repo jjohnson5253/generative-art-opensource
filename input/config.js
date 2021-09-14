@@ -160,7 +160,7 @@ const layers = [
 // provide any specific percentages that are required for a given layer and rarity level
 
 // Super legendary will have Elizabeth, so don't use legendary backgrounds (dino, sphinx, shark, lion), they dont look great with
-addRarityPercentForLayer('super legendary', 'background', {'super legendary': 70, 'legendary': 0, 'rare': 16.6, 'uncommon': 11.3, 'common': 2.1 });
+addRarityPercentForLayer('super legendary', 'background', {'super legendary': 85, 'legendary': 0, 'rare': 6.6, 'uncommon': 6.3, 'common': 2.1 });
 addRarityPercentForLayer('super legendary', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
 addRarityPercentForLayer('super legendary', 'floor', {'super legendary': 70, 'legendary': 29.3, 'rare': 0.3, 'uncommon': 0.3, 'common': 0.1 });
 addRarityPercentForLayer('super legendary', 'bear', {'super legendary': 70, 'legendary': 29.3, 'rare': 0.3, 'uncommon': 0.3, 'common': 0.1 });
@@ -200,7 +200,7 @@ addRarityPercentForLayer('rare', 'hat', {'super legendary': 1, 'legendary': 7, '
 addRarityPercentForLayer('rare', 'glasses', {'super legendary': 1, 'legendary': 7, 'rare': 37, 'uncommon': 5, 'common': 50 });
 addRarityPercentForLayer('rare', 'mouth', {'super legendary': 1.2, 'legendary': 2.8, 'rare': 75, 'uncommon': 15, 'common': 6 });
 
-addRarityPercentForLayer('uncommon', 'background', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 16, 'uncommon': 75, 'common': 7 });
+addRarityPercentForLayer('uncommon', 'background', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
 addRarityPercentForLayer('uncommon', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
 addRarityPercentForLayer('uncommon', 'floor', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 16, 'uncommon': 75, 'common': 7 });
 addRarityPercentForLayer('uncommon', 'bear', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 16, 'uncommon': 75, 'common': 7 });;
