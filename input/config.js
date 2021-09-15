@@ -168,7 +168,7 @@ addRarityPercentForLayer('super legendary', 'bear', {'super legendary': 70, 'leg
 addRarityPercentForLayer('super legendary', 'figure', {'super legendary': 100, 'legendary': 0, 'rare': 0, 'uncommon': 0, 'common': 0 });
 addRarityPercentForLayer('super legendary', 'earrings', {'super legendary': 49.1, 'legendary': 0.3, 'rare': 0.3, 'uncommon': 0.3, 'common': 50 });
 addRarityPercentForLayer('super legendary', 'eyes', {'super legendary': 99, 'legendary': 0.3, 'rare': 0.3, 'uncommon': 0.3, 'common': 0.1 });
-addRarityPercentForLayer('super legendary', 'nose', {'super legendary': 99, 'legendary': 0.3, 'rare': 0.3, 'uncommon': 0.3, 'common': 0.1 });
+addRarityPercentForLayer('super legendary', 'nose', {'super legendary': 30, 'legendary': 10, 'rare': 30, 'uncommon': 0., 'common': 30 });
 // super legendarys can only use hats from super legendary and uncommon (common is no hat) (rare and legendary hats are too big and get in way of burt figure)
 addRarityPercentForLayer('super legendary', 'hat', {'super legendary': 40.1, 'legendary': 3.3, 'rare': 3.3, 'uncommon': 3.3, 'common': 50 });
 addRarityPercentForLayer('super legendary', 'glasses', {'super legendary': 49.1, 'legendary': 0.3, 'rare': 0.3, 'uncommon': 0.3, 'common': 50 });
@@ -182,7 +182,7 @@ addRarityPercentForLayer('legendary', 'bear', {'super legendary': 7, 'legendary'
 addRarityPercentForLayer('legendary', 'figure', {'super legendary': 0, 'legendary': 80, 'rare': 0, 'uncommon': 0, 'common': 20 });
 addRarityPercentForLayer('legendary', 'earrings', {'super legendary': 1, 'legendary': 37, 'rare': 7, 'uncommon': 5, 'common': 50 });
 addRarityPercentForLayer('legendary', 'eyes', {'super legendary': 7, 'legendary': 71, 'rare': 12, 'uncommon': 7, 'common': 3 });
-addRarityPercentForLayer('legendary', 'nose', {'super legendary': 7, 'legendary': 71, 'rare': 12, 'uncommon': 7, 'common': 3 });
+addRarityPercentForLayer('legendary', 'nose', {'super legendary': 30, 'legendary': 10, 'rare': 30, 'uncommon': 0., 'common': 30 });
 // Don't use legendary or rare hats for legendary, just avoiding them in case Burt is picked
 addRarityPercentForLayer('legendary', 'hat', {'super legendary': 20, 'legendary': 0, 'rare': 0, 'uncommon': 30, 'common': 50 });
 addRarityPercentForLayer('legendary', 'glasses', {'super legendary': 1, 'legendary': 37, 'rare': 7, 'uncommon': 5, 'common': 50 });
