@@ -231,7 +231,7 @@ const getRarity = (_editionCount) => {
 };
 
 const writeMetaData = (_data) => {
-  fs.writeFileSync("./output/_metadata.json", _data);
+  fs.writeFileSync("./_metadata.json", _data);
 };
 
 // holds which dna has already been used during generation
