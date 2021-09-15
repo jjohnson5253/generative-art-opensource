@@ -220,7 +220,7 @@ addRarityPercentForLayer('common', 'figure', {'super legendary': 0, 'legendary':
 addRarityPercentForLayer('common', 'earrings', {'super legendary': 0.1, 'legendary': 0.9, 'rare': 10, 'uncommon': 39, 'common': 50 });
 addRarityPercentForLayer('common', 'eyes', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
 addRarityPercentForLayer('common', 'nose', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
-addRarityPercentForLayer('common', 'hat', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 0, 'common': 100 });
+addRarityPercentForLayer('common', 'hat', {'super legendary': 0.1, 'legendary': 0.9, 'rare': 10, 'uncommon': 39, 'common': 50 });
 addRarityPercentForLayer('common', 'glasses', {'super legendary': 0.1, 'legendary': 0.9, 'rare': 10, 'uncommon': 39, 'common': 50 });
 addRarityPercentForLayer('common', 'mouth', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
 
