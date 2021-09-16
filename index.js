@@ -14,6 +14,12 @@ const console = require("console");
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext("2d");
 
+// create output dir if doesn't exist
+const dir = './output';
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
+
 let filesList = [{
   uri: "image.png", 
   type: "image.png",},
