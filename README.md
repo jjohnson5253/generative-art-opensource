@@ -1,3 +1,8 @@
+# For bear rugs version:
+1. Add input folder into root directory (titled 'input')
+2. Add layer folders in input folder
+3. Add rarity folders in layer folders (super legendary, legendary, rare, uncommon, common)
+
 # Welcome to HashLips
 
 All the code in these repos was created and explained by HashLips on the main YouTube channel.
