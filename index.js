@@ -115,7 +115,7 @@ const drawElement = (_element) => {
 // drawing on a canvas
 const constructLayerToDna = (_dna = [], _layers = [], _rarity) => {
   let mappedDnaToLayers = _layers.map((layer, index) => {
-    let selectedElement = layer.elements.find(element => element.id === _dna[index]);
+    let selectedElement = layer.elements.find(element => element.name === _dna[index]);
     return {
       location: layer.location,
       position: layer.position,
@@ -153,7 +153,6 @@ const createDna = (_layers, _rarity) => {
   let randNum = [];
   let _rarityWeight = rarityWeights.find(rw => rw.value === _rarity);
   let isCommonBackground = false;
-  let isBurt = false;
   _layers.forEach((layer) => {
     let num = Math.floor(Math.random() * layer.elementIdsForRarity[_rarity].length);
     if (_rarityWeight && _rarityWeight.layerPercent[layer.id]) {
@@ -197,9 +196,13 @@ const createDna = (_layers, _rarity) => {
 
       // get random index in rarity folder
       num = Math.floor(Math.random() * layer.elementIdsForRarity[_rarityForLayer].length);
-      randNum.push(layer.elementIdsForRarity[_rarityForLayer][num]);
+      let id = layer.elementIdsForRarity[_rarityForLayer][num];
+      let selectedElement = layer.elements.find(element => element.id === id);
+      randNum.push(selectedElement.name);
     } else {
-      randNum.push(layer.elementIdsForRarity[_rarity][num]);
+      let id = layer.elementIdsForRarity[_rarity][num];
+      let selectedElement = layer.elements.find(element => element.id === id);
+      randNum.push(selectedElement.name);
     }
   });
   return randNum;
