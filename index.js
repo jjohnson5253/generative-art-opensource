@@ -9,10 +9,20 @@ const {
   editionSize,
   startEditionFrom,
   rarityWeights,
-} = require("./input/config.js");
+} = require("./config.js");
 const console = require("console");
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext("2d");
+
+let filesList = [{
+  uri: "image.png", 
+  type: "image.png",},
+];
+
+let creatorsList = [{
+  address: "254252_some_address_234234234234",
+  share: 100,},
+];
 
 // saves the generated image to the output folder, using the edition count as the name
 const saveImage = (_editionCount) => {
@@ -47,13 +57,17 @@ const drawBackground = () => {
 const generateMetadata = (_dna, _edition, _attributesList) => {
   let dateTime = Date.now();
   let tempMetadata = {
-    dna: _dna.join(""),
-    name: `#${_edition}`,
+    name: `Bear Rug ${_edition}`,
+    symbol: ``,
     description: description,
-    image: `${baseImageUri}/${_edition}`,
-    edition: _edition,
-    date: dateTime,
+    seller_fee_basis_points: 0,
+    image: `image.png`,
     attributes: _attributesList,
+    collection: {name: `Bear Rugs Gen 1`},
+    properties: {
+      files: filesList,
+      creators: creatorsList,
+    },
   };
   return tempMetadata;
 };
@@ -61,9 +75,10 @@ const generateMetadata = (_dna, _edition, _attributesList) => {
 // prepare attributes for the given element to be used as metadata
 const getAttributeForElement = (_element) => {
   let selectedElement = _element.layer.selectedElement;
+  //console.log(_element.layer.layerName)
   let attribute = {
-    name: selectedElement.name,
-    rarity: selectedElement.rarity,
+    trait_type: _element.layer.layerName,
+    value: selectedElement.name,
   };
   return attribute;
 };
@@ -97,7 +112,8 @@ const constructLayerToDna = (_dna = [], _layers = [], _rarity) => {
       location: layer.location,
       position: layer.position,
       size: layer.size,
-      selectedElement: {...selectedElement, rarity: _rarity },
+      layerName: layer.id,
+      selectedElement: selectedElement,
     };
   });
   return mappedDnaToLayers;
@@ -129,11 +145,58 @@ const getRandomRarity = (_rarityOptions) => {
 const createDna = (_layers, _rarity) => {
   let randNum = [];
   let _rarityWeight = rarityWeights.find(rw => rw.value === _rarity);
+  let isCommonBackground = false;
+  let isBurt = false;
   _layers.forEach((layer) => {
     let num = Math.floor(Math.random() * layer.elementIdsForRarity[_rarity].length);
     if (_rarityWeight && _rarityWeight.layerPercent[layer.id]) {
+
+      console.log('for layer:')
+      console.log(layer.id)
       // if there is a layerPercent defined, we want to identify which dna to actually use here (instead of only picking from the same rarity)
       let _rarityForLayer = getRandomRarity(_rarityWeight.layerPercent[layer.id]);
+      
+      if (layer.id == 'background')
+      {
+        console.log('rarity for background');
+        console.log(_rarityForLayer);
+        if (_rarityForLayer == 'common')
+        {
+          isCommonBackground = true;
+        }
+      }
+      // change rarity for art layer if background is plain
+      if (layer.id == 'art')
+      {
+        if (isCommonBackground)
+        {
+          console.log('changing rarity for art to 100')
+          rarityPercent = [
+            { id: 'super legendary', percent: 0 },
+            { id: 'legendary', percent: 0 },
+            { id: 'rare', percent: 0 },
+            { id: 'uncommon', percent: 50 },
+            { id: 'common', percent: 50 }
+          ]
+        }
+        else
+        {
+          console.log('changing rarity for art to 0')
+          // if not plain background, give 100% chance of no painting
+          rarityPercent = [
+            { id: 'super legendary', percent: 0 },
+            { id: 'legendary', percent: 0 },
+            { id: 'rare', percent: 0 },
+            { id: 'uncommon', percent: 100 },
+            { id: 'common', percent: 0 }
+          ]
+        }
+        _rarityForLayer = getRandomRarity(rarityPercent);
+        console.log('rarity for layer');
+        console.log(_rarityForLayer);
+      }
+
+      // get random index in rarity folder
       num = Math.floor(Math.random() * layer.elementIdsForRarity[_rarityForLayer].length);
       randNum.push(layer.elementIdsForRarity[_rarityForLayer][num]);
     } else {
@@ -151,16 +214,22 @@ const getRarity = (_editionCount) => {
     // prepare array to iterate over
     rarityForEdition = [];
     rarityWeights.forEach((rarityWeight) => {
+
       for (let i = rarityWeight.from; i <= rarityWeight.to; i++) {
         rarityForEdition.push(rarityWeight.value);
       }
     });
   }
-  return rarityForEdition[editionSize - _editionCount];
+  console.log('rarity for edition')
+  console.log(rarityForEdition[0])
+  console.log(editionSize)
+  console.log(_editionCount)
+
+  return rarityForEdition[_editionCount];
 };
 
 const writeMetaData = (_data) => {
-  fs.writeFileSync("./output/_metadata.json", _data);
+  fs.writeFileSync("./_metadata.json", _data);
 };
 
 // holds which dna has already been used during generation
@@ -178,7 +247,7 @@ const startCreating = async () => {
   console.log('start creating NFTs.')
 
   // clear meta data from previous run
-  writeMetaData("");
+  //writeMetaData("");
 
   // prepare dnaList object
   rarityWeights.forEach((rarityWeight) => {
@@ -187,6 +256,7 @@ const startCreating = async () => {
 
   // create NFTs from startEditionFrom to editionSize
   let editionCount = startEditionFrom;
+  //let editionCount = 9;
   while (editionCount <= editionSize) {
     console.log('-----------------')
     console.log('creating NFT %d of %d', editionCount, editionSize);
@@ -230,11 +300,12 @@ const startCreating = async () => {
         attributesList.push(getAttributeForElement(element));
       });
       // add an image signature as the edition count to the top left of the image
-      signImage(`#${editionCount}`);
+      //signImage(`#${editionCount}`);
       // write the image to the output directory
       saveImage(editionCount);
       let nftMetadata = generateMetadata(newDna, editionCount, attributesList);
       metadataList.push(nftMetadata)
+      fs.writeFileSync("./output/"+editionCount.toString()+".json", JSON.stringify(nftMetadata));
       console.log('- metadata: ' + JSON.stringify(nftMetadata));
       console.log('- edition ' + editionCount + ' created.');
       console.log();

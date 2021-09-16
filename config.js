@@ -116,46 +116,114 @@ const addRarityPercentForLayer = (_rarityId, _layerId, _percentages) => {
  *************************************************************/
 
 // image width in pixels
-const width = 1000;
+const width = 2048;
 // image height in pixels
-const height = 1000;
+const height = 2048;
 // description for NFT in metadata file
-const description = "This is an NFT made by the coolest generative code.";
+const description = "Bear rugs not drugs";
 // base url to use in metadata file
 // the id of the nft will be added to this url, in the example e.g. https://hashlips/nft/1 for NFT with id 1
-const baseImageUri = "https://hashlips/nft";
+const baseImageUri = "";
 // id for edition to start from
-const startEditionFrom = 1;
+const startEditionFrom = 0;
 // amount of NFTs to generate in edition
-const editionSize = 10;
+const editionSize = 5;
 // prefix to add to edition dna ids (to distinguish dna counts from different generation processes for the same collection)
 const editionDnaPrefix = 0
 
 // create required weights
 // for each weight, call 'addRarity' with the id and from which to which element this rarity should be applied
 let rarityWeights = [
-  addRarity('super_rare', 1, 1),
-  addRarity('rare', 2, 5),
-  addRarity('original', 5, 10)
+  addRarity('super legendary', 0, 30),
+  addRarity('legendary', 31, 100),
+  addRarity('rare', 101, 250),
+  addRarity('uncommon', 251, 500),
+  addRarity('common', 500, 999)
 ];
 
 // create required layers
 // for each layer, call 'addLayer' with the id and optionally the positioning and size
 // the id would be the name of the folder in your input directory, e.g. 'ball' for ./input/ball
 const layers = [
-  addLayer('ball', { x: 0, y: 0 }, { width: width, height: height }),
-  addLayer('eye color'),
-  addLayer('iris'),
-  addLayer('shine'),
-  addLayer('bottom lid'),
-  addLayer('top lid')
+  addLayer('background', { x: 0, y: 0 }, { width: width, height: height }),
+  addLayer('art'),
+  addLayer('floor'),
+  addLayer('bear'),
+  addLayer('figure'),
+  addLayer('earrings'),
+  addLayer('eyes'),
+  addLayer('nose'),
+  addLayer('hat'),
+  addLayer('glasses'),
+  addLayer('mouth'),
 ];
 
 // provide any specific percentages that are required for a given layer and rarity level
-// all provided options are used based on their percentage values to decide which layer to select from
-addRarityPercentForLayer('super_rare', 'ball', { 'super_rare': 33, 'rare': 33, 'original': 33 });
-addRarityPercentForLayer('super_rare', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
-addRarityPercentForLayer('original', 'eye color', { 'super_rare': 50, 'rare': 25, 'original': 25 });
+
+// Super legendary will have Elizabeth, so don't use legendary backgrounds (dino, sphinx, shark, lion), they dont look great with
+addRarityPercentForLayer('super legendary', 'background', {'super legendary': 85, 'legendary': 0, 'rare': 6.6, 'uncommon': 6.3, 'common': 2.1 });
+addRarityPercentForLayer('super legendary', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
+addRarityPercentForLayer('super legendary', 'floor', {'super legendary': 70, 'legendary': 29.3, 'rare': 0.3, 'uncommon': 0.3, 'common': 0.1 });
+addRarityPercentForLayer('super legendary', 'bear', {'super legendary': 70, 'legendary': 29.3, 'rare': 0.3, 'uncommon': 0.3, 'common': 0.1 });
+// super legendarys always have Elizabeth
+addRarityPercentForLayer('super legendary', 'figure', {'super legendary': 100, 'legendary': 0, 'rare': 0, 'uncommon': 0, 'common': 0 });
+addRarityPercentForLayer('super legendary', 'earrings', {'super legendary': 49.1, 'legendary': 0.3, 'rare': 0.3, 'uncommon': 0.3, 'common': 50 });
+addRarityPercentForLayer('super legendary', 'eyes', {'super legendary': 99, 'legendary': 0.3, 'rare': 0.3, 'uncommon': 0.3, 'common': 0.1 });
+addRarityPercentForLayer('super legendary', 'nose', {'super legendary': 30, 'legendary': 10, 'rare': 30, 'uncommon': 0., 'common': 30 });
+// super legendarys can only use hats from super legendary and uncommon (common is no hat) (rare and legendary hats are too big and get in way of burt figure)
+addRarityPercentForLayer('super legendary', 'hat', {'super legendary': 40.1, 'legendary': 3.3, 'rare': 3.3, 'uncommon': 3.3, 'common': 50 });
+addRarityPercentForLayer('super legendary', 'glasses', {'super legendary': 49.1, 'legendary': 0.3, 'rare': 0.3, 'uncommon': 0.3, 'common': 50 });
+addRarityPercentForLayer('super legendary', 'mouth', {'super legendary': 70, 'legendary': 29.3, 'rare': 0.3, 'uncommon': 0.3, 'common': 0.1 });
+
+addRarityPercentForLayer('legendary', 'background', {'super legendary': 7, 'legendary': 71, 'rare': 12, 'uncommon': 7, 'common': 3 });
+addRarityPercentForLayer('legendary', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
+addRarityPercentForLayer('legendary', 'floor', {'super legendary': 7, 'legendary': 71, 'rare': 12, 'uncommon': 7, 'common': 3 });
+addRarityPercentForLayer('legendary', 'bear', {'super legendary': 7, 'legendary': 71, 'rare': 12, 'uncommon': 7, 'common': 3 });
+// 80% chance of Burt on legendary
+addRarityPercentForLayer('legendary', 'figure', {'super legendary': 0, 'legendary': 80, 'rare': 0, 'uncommon': 0, 'common': 20 });
+addRarityPercentForLayer('legendary', 'earrings', {'super legendary': 1, 'legendary': 37, 'rare': 7, 'uncommon': 5, 'common': 50 });
+addRarityPercentForLayer('legendary', 'eyes', {'super legendary': 7, 'legendary': 71, 'rare': 12, 'uncommon': 7, 'common': 3 });
+addRarityPercentForLayer('legendary', 'nose', {'super legendary': 30, 'legendary': 10, 'rare': 30, 'uncommon': 0., 'common': 30 });
+// Don't use legendary or rare hats for legendary, just avoiding them in case Burt is picked
+addRarityPercentForLayer('legendary', 'hat', {'super legendary': 20, 'legendary': 0, 'rare': 0, 'uncommon': 30, 'common': 50 });
+addRarityPercentForLayer('legendary', 'glasses', {'super legendary': 1, 'legendary': 37, 'rare': 7, 'uncommon': 5, 'common': 50 });
+addRarityPercentForLayer('legendary', 'mouth', {'super legendary': 7, 'legendary': 71, 'rare': 12, 'uncommon': 7, 'common': 3 });
+
+addRarityPercentForLayer('rare', 'background', {'super legendary': 1.2, 'legendary': 2.8, 'rare': 75, 'uncommon': 15, 'common': 6 });
+addRarityPercentForLayer('rare', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
+addRarityPercentForLayer('rare', 'floor', {'super legendary': 1.2, 'legendary': 2.8, 'rare': 75, 'uncommon': 15, 'common': 6 });
+addRarityPercentForLayer('rare', 'bear', {'super legendary': 1.2, 'legendary': 2.8, 'rare': 75, 'uncommon': 15, 'common': 6 });
+addRarityPercentForLayer('rare', 'figure', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 0, 'common': 100 });
+addRarityPercentForLayer('rare', 'earrings', {'super legendary': 1, 'legendary': 7, 'rare': 37, 'uncommon': 5, 'common': 50 });
+addRarityPercentForLayer('rare', 'eyes', {'super legendary': 1.2, 'legendary': 2.8, 'rare': 75, 'uncommon': 15, 'common': 6 });
+addRarityPercentForLayer('rare', 'nose', {'super legendary': 1.2, 'legendary': 2.8, 'rare': 75, 'uncommon': 15, 'common': 6 });
+addRarityPercentForLayer('rare', 'hat', {'super legendary': 1, 'legendary': 7, 'rare': 37, 'uncommon': 5, 'common': 50 });
+addRarityPercentForLayer('rare', 'glasses', {'super legendary': 1, 'legendary': 7, 'rare': 37, 'uncommon': 5, 'common': 50 });
+addRarityPercentForLayer('rare', 'mouth', {'super legendary': 1.2, 'legendary': 2.8, 'rare': 75, 'uncommon': 15, 'common': 6 });
+
+addRarityPercentForLayer('uncommon', 'background', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
+addRarityPercentForLayer('uncommon', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
+addRarityPercentForLayer('uncommon', 'floor', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
+addRarityPercentForLayer('uncommon', 'bear', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
+addRarityPercentForLayer('uncommon', 'figure', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 0, 'common': 100 });
+addRarityPercentForLayer('uncommon', 'earrings', {'super legendary': 1, 'legendary': 5, 'rare': 7, 'uncommon': 37, 'common': 50 });
+addRarityPercentForLayer('uncommon', 'eyes', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
+addRarityPercentForLayer('uncommon', 'nose', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
+addRarityPercentForLayer('uncommon', 'hat', {'super legendary': 1, 'legendary': 5, 'rare': 7, 'uncommon': 37, 'common': 50 });
+addRarityPercentForLayer('uncommon', 'glasses', {'super legendary': 1, 'legendary': 5, 'rare': 7, 'uncommon': 37, 'common': 50 });
+addRarityPercentForLayer('uncommon', 'mouth', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
+
+addRarityPercentForLayer('common', 'background', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
+addRarityPercentForLayer('common', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
+addRarityPercentForLayer('common', 'floor', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
+addRarityPercentForLayer('common', 'bear', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
+addRarityPercentForLayer('common', 'figure', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 0, 'common': 100 });
+addRarityPercentForLayer('common', 'earrings', {'super legendary': 0.1, 'legendary': 0.9, 'rare': 10, 'uncommon': 39, 'common': 50 });
+addRarityPercentForLayer('common', 'eyes', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
+addRarityPercentForLayer('common', 'nose', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
+addRarityPercentForLayer('common', 'hat', {'super legendary': 0.1, 'legendary': 0.9, 'rare': 10, 'uncommon': 39, 'common': 50 });
+addRarityPercentForLayer('common', 'glasses', {'super legendary': 0.1, 'legendary': 0.9, 'rare': 10, 'uncommon': 39, 'common': 50 });
+addRarityPercentForLayer('common', 'mouth', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
 
 module.exports = {
   layers,

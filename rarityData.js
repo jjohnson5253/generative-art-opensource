@@ -5,10 +5,10 @@ const fs = require('fs');
 const {
   layers,
   editionSize,
-  startEditionFrom
+  startEditionFrom,
 } = require("./config.js");
 
-let collectionSize = editionSize - startEditionFrom + 1;
+const collectionSize = editionSize - startEditionFrom + 1;
 
 // removes duplicate traits in rarity chart
 const removeDuplicatesRarityTraits = (data) => {
@@ -26,7 +26,7 @@ const removeDuplicatesRarityTraits = (data) => {
 
 let rarityChart = [];
 
-// create rarity chart with 0 occurences
+// initialize rarity chart
 layers.forEach((layer) => {
 
 	let elementsList = [];
@@ -39,7 +39,7 @@ layers.forEach((layer) => {
 	{
 		elementsList = {
 			value : layer.elements[i].name,
-			occurence : 0,
+			percentage : 0,
 		};
 		rarityForLayer.traits.push(elementsList);
 	}
@@ -69,7 +69,7 @@ data.forEach((element) => {
 		for (let i = 0; i < rarityChartTrait.traits.length; i++)
 		{
 			if (rarityChartTrait.traits[i].value == value){
-				rarityChartTrait.traits[i].occurence++;
+				rarityChartTrait.traits[i].percentage++;
 			}
 		}
 	}
@@ -80,7 +80,7 @@ data.forEach((element) => {
 for (const [layer, traits] of Object.entries(rarityChart)) {
 	for (const [trait, value] of Object.entries(traits)) {
 		for (const [key, val] of Object.entries(value)) {
-			val.occurence = (val.occurence / (collectionSize)) * 100
+			val.percentage = (val.percentage / collectionSize) * 100
 		}
 	}
 }
