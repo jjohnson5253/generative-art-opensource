@@ -3,10 +3,9 @@
 const fs = require('fs');
 
 const {
-  layers
-} = require("./input/config.js");
-
-const NUM_OF_EDITIONS = 1000;
+  layers,
+  editionSize
+} = require("./config.js");
 
 // removes duplicate traits in rarity chart
 const removeDuplicatesRarityTraits = (data) => {
@@ -78,7 +77,7 @@ data.forEach((element) => {
 for (const [layer, traits] of Object.entries(rarityChart)) {
 	for (const [trait, value] of Object.entries(traits)) {
 		for (const [key, val] of Object.entries(value)) {
-			val.occurence = (val.occurence / NUM_OF_EDITIONS) * 100
+			val.occurence = (val.occurence / (editionSize+1)) * 100
 		}
 	}
 }

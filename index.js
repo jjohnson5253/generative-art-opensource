@@ -9,12 +9,16 @@ const {
   editionSize,
   startEditionFrom,
   rarityWeights,
-} = require("./input/config.js");
+} = require("./config.js");
 const console = require("console");
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext("2d");
-//const plainBgStartIdx = 11; // first plain background
-//const plainBgEndIdx = 15; // last plain background
+
+// create output dir if doesn't exist
+const dir = './output';
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
 
 let filesList = [{
   uri: "image.png", 

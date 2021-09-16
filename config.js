@@ -3,7 +3,8 @@
  * - scroll to BEGIN CONFIG to provide the config values
  *************************************************************/
 const fs = require("fs");
-const dir = __dirname;
+const imageDir = '/input/'
+const dir = __dirname + imageDir;
 
 // adds a rarity to the configuration. This is expected to correspond with a directory containing the rarity for each defined layer
 // @param _id - id of the rarity
@@ -126,7 +127,7 @@ const baseImageUri = "";
 // id for edition to start from
 const startEditionFrom = 0;
 // amount of NFTs to generate in edition
-const editionSize = 999;
+const editionSize = 5;
 // prefix to add to edition dna ids (to distinguish dna counts from different generation processes for the same collection)
 const editionDnaPrefix = 0
 
