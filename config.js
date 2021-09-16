@@ -203,7 +203,7 @@ addRarityPercentForLayer('rare', 'hat', {'super legendary': 1, 'legendary': 7, '
 addRarityPercentForLayer('rare', 'glasses', {'super legendary': 1, 'legendary': 7, 'rare': 37, 'uncommon': 5, 'common': 50 });
 addRarityPercentForLayer('rare', 'mouth', {'super legendary': 1.2, 'legendary': 2.8, 'rare': 75, 'uncommon': 15, 'common': 6 });
 
-addRarityPercentForLayer('uncommon', 'background', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
+addRarityPercentForLayer('uncommon', 'background', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 65, 'common': 20 });
 addRarityPercentForLayer('uncommon', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
 addRarityPercentForLayer('uncommon', 'floor', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
 addRarityPercentForLayer('uncommon', 'bear', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
@@ -215,7 +215,7 @@ addRarityPercentForLayer('uncommon', 'hat', {'super legendary': 1, 'legendary': 
 addRarityPercentForLayer('uncommon', 'glasses', {'super legendary': 1, 'legendary': 5, 'rare': 7, 'uncommon': 37, 'common': 50 });
 addRarityPercentForLayer('uncommon', 'mouth', {'super legendary': 0.8, 'legendary': 1.2, 'rare': 13, 'uncommon': 75, 'common': 10 });
 
-addRarityPercentForLayer('common', 'background', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
+addRarityPercentForLayer('common', 'background', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 12, 'uncommon': 23, 'common': 65 });
 addRarityPercentForLayer('common', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
 addRarityPercentForLayer('common', 'floor', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
 addRarityPercentForLayer('common', 'bear', {'super legendary': 0.4, 'legendary': 0.6, 'rare': 7, 'uncommon': 17, 'common': 75 });
