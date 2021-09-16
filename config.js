@@ -3,7 +3,8 @@
  * - scroll to BEGIN CONFIG to provide the config values
  *************************************************************/
 const fs = require("fs");
-const dir = __dirname;
+const imageDir = '/input/'
+const dir = __dirname + imageDir;
 
 // adds a rarity to the configuration. This is expected to correspond with a directory containing the rarity for each defined layer
 // @param _id - id of the rarity
