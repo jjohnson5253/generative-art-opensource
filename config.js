@@ -155,8 +155,8 @@ const layers = [
   addLayer('earrings'),
   addLayer('eyes'),
   addLayer('nose'),
-  addLayer('hat'),
   addLayer('glasses'),
+  addLayer('hat'),
   addLayer('mouth'),
 ];
 
