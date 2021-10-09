@@ -28,7 +28,6 @@ let rarityChart = [];
 
 // initialize rarity chart
 layers.forEach((layer) => {
-
 	let elementsList = [];
 
 	let rarityForLayer = {
