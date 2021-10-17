@@ -29,7 +29,7 @@ let filesList = [{
 ];
 
 let creatorsList = [{
-  address: "254252_some_address_234234234234",
+  address: "FjS7Tgw4vyPu2W2pwTXupT1WXPhXMjiM4V7zotVUdias",
   share: 100,},
 ];
 
@@ -70,11 +70,15 @@ const generateMetadata = (_dna, _edition, _attributesList) => {
     symbol: ``,
     description: description,
     seller_fee_basis_points: 0,
-    image: `image.png`,
+    image: "image.png",
+    external_url: "https://www.bearrugsnft.xyz/",
     attributes: _attributesList,
-    collection: {name: `Bear Rugs Gen 1`},
+    collection: {
+      name: `Bear Rugs Gen 1`,
+      family: "Bear Rugs"},
     properties: {
       files: filesList,
+      category: "image",
       creators: creatorsList,
     },
   };
