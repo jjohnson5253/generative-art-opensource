@@ -17,6 +17,32 @@ const console = require("console");
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext("2d");
 
+// array to hold random editions. So that we don't save in order.
+let randomEditionArray = [];
+
+// func to fill the random edition array with all possible values given
+// start and stop editions
+const fillRandomEditionArray = (_arr) => {
+  for(let i = startEditionFrom; i<editionSize+1; i++)
+  {
+    _arr.push(i);
+  }
+};
+
+// func to get random edition from array
+const getRandomEdition = (_arr) => {
+
+  // get random element
+  const randomEditionIndex = Math.floor(Math.random() * _arr.length);
+
+  let randomEdition = _arr[randomEditionIndex];
+
+  // remove element from arr so next created edition can't use it
+  _arr.splice(randomEditionIndex, 1);
+
+  return randomEdition;
+};
+
 // create output dir if doesn't exist
 const dir = './output';
 if (!fs.existsSync(dir)){
@@ -29,7 +55,7 @@ let filesList = [{
 ];
 
 let creatorsList = [{
-  address: "FjS7Tgw4vyPu2W2pwTXupT1WXPhXMjiM4V7zotVUdias",
+  address: "Zie2CxcBcL2YJf2PAwcFaDFuGN87WRSdbdhk1SWm8qh",
   share: 100,},
 ];
 
@@ -69,7 +95,7 @@ const generateMetadata = (_dna, _edition, _attributesList) => {
     name: `Bear Rug ${_edition}`,
     symbol: ``,
     description: description,
-    seller_fee_basis_points: 0,
+    seller_fee_basis_points: 750,
     image: "image.png",
     external_url: "https://www.bearrugsnft.xyz/",
     attributes: _attributesList,
@@ -253,6 +279,8 @@ if (fs.existsSync(dnaListPath)){
 let metadataList = [];
 // Create generative art by using the canvas api
 const startCreating = async () => {
+  fillRandomEditionArray(randomEditionArray);
+
   console.log('##################');
   console.log('# Generative Art');
   console.log('# - Create your NFT collection');
@@ -306,15 +334,23 @@ const startCreating = async () => {
         drawElement(element);
         attributesList.push(getAttributeForElement(element));
       });
-      // add an image signature as the edition count to the top left of the image
-      //signImage(`#${editionCount}`);
-      // write the image to the output directory
-      saveImage(editionCount);
+
+      // get a random edition number so we don't save the images in order.
+      // This way candy machine rarity isn't based on order of mint
+      let randomEditionNumber = getRandomEdition(randomEditionArray);
+
+      // write the image to the output directory with RANDOM edition
+      saveImage(randomEditionNumber);
+
+      // use CURRENT edition in metadata
       let nftMetadata = generateMetadata(newDna, editionCount, attributesList);
       metadataList.push(nftMetadata)
-      fs.writeFileSync("./output/"+editionCount.toString()+".json", JSON.stringify(nftMetadata));
+
+      // use same random edition for metadata saved filename
+      fs.writeFileSync("./output/"+randomEditionNumber.toString()+".json", JSON.stringify(nftMetadata));
       console.log('- metadata: ' + JSON.stringify(nftMetadata));
       console.log('- edition ' + editionCount + ' created.');
+      console.log('- random edition ' + randomEditionNumber + ' created.');
       console.log();
     });
     dnaList.push(newDna);

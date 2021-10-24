@@ -65,3 +65,7 @@ To see the percentages of each attribute across your collection, run `node rarit
 
 # Development suggestions
 - Preferably use VSCode with the prettifier plugin for a consistent coding style (or equivalent js formatting rules)
+
+# Debug/notes
+- If you get this error ```SyntaxError: Unexpected end of JSON input 
+    at JSON.parse (<anonymous>)``` it's probably because you need to make sure dnaList has `[]` in it, at least (or a bunch of JSON data).
