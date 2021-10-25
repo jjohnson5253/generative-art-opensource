@@ -55,7 +55,7 @@ let filesList = [{
 ];
 
 let creatorsList = [{
-  address: "Zie2CxcBcL2YJf2PAwcFaDFuGN87WRSdbdhk1SWm8qh",
+  address: "BMSAupd4TrS6d2tvXdZr6BiqEkhvELoT2xEH9KmYBNKm",
   share: 100,},
 ];
 
