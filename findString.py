@@ -4,10 +4,9 @@ import os
 
 directory = './change_metadata'
 fileCnt=0
-fileChangeCnt=0
+matchesFound=0
 
-toReplace = ',"external_url":"https://www.bearrugsnft.xyz/"'
-replaceWith = ''
+toFind = 'Bear Rug 1111'
 
 # loop through files
 for filename in os.listdir(directory):
@@ -22,19 +21,17 @@ for filename in os.listdir(directory):
 		with open(filepath, 'r') as file:
 			metadata = file.read()
 		
-		if toReplace in metadata:
-			fileChangeCnt = fileChangeCnt + 1
-		# Replace whatever with whatever
-		metadata = metadata.replace(toReplace, replaceWith)
+		if toFind in metadata:
+			matchesFound = matchesFound + 1
 
 		# Write the file out again
 		with open(filepath, 'w') as file:
 			file.write(metadata)
 
 # print num of files changed
-print("files found:")
+print("files searched:")
 print(fileCnt)
 
 # print num of files changed
-print("files changed:")
-print(fileChangeCnt)
+print("Matches found")
+print(matchesFound)

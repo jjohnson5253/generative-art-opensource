@@ -6,7 +6,10 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+change_metadata/
 _metadata.json
+presale_nfts/
+public_nfts/
 
 output/
 
