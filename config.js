@@ -120,14 +120,14 @@ const width = 2048;
 // image height in pixels
 const height = 2048;
 // description for NFT in metadata file
-const description = "Bear Rug Collective";
+const description = "8,888 unique Bear Rugs on the Solana blockchain. The only NFT rugs you will ever want.";
 // base url to use in metadata file
 // the id of the nft will be added to this url, in the example e.g. https://hashlips/nft/1 for NFT with id 1
 const baseImageUri = "";
 // id for edition to start from
 const startEditionFrom = 0;
 // amount of NFTs to generate in edition
-const editionSize = 8887;
+const editionSize = 887;
 // prefix to add to edition dna ids (to distinguish dna counts from different generation processes for the same collection)
 const editionDnaPrefix = 0
 // generation to use
@@ -136,9 +136,9 @@ const generation = 1;
 // create required weights
 // for each weight, call 'addRarity' with the id and from which to which element this rarity should be applied
 let rarityWeights = [
-  addRarity('super legendary', 0, 250),
-  addRarity('legendary', 251, 750),
-  addRarity('rare', 751, 2000),
+  addRarity('legendary', 0, 887), //
+  addRarity('super legendary', 888, 889),
+  addRarity('rare', 900, 2000),
   addRarity('uncommon', 2001, 4500),
   addRarity('common', 4501, 8887)
 ];
@@ -181,7 +181,7 @@ addRarityPercentForLayer('legendary', 'background', {'super legendary': 7, 'lege
 addRarityPercentForLayer('legendary', 'art', {'super legendary': 0, 'legendary': 0, 'rare': 0, 'uncommon': 100, 'common': 0 });
 addRarityPercentForLayer('legendary', 'floor', {'super legendary': 7, 'legendary': 71, 'rare': 12, 'uncommon': 7, 'common': 3 });
 addRarityPercentForLayer('legendary', 'bear', {'super legendary': 7, 'legendary': 71, 'rare': 12, 'uncommon': 7, 'common': 3 });
-// 100% chance of non legendary figures on legendary
+// 100% chance of legendary figures on legendary
 addRarityPercentForLayer('legendary', 'figure', {'super legendary': 0, 'legendary': 100, 'rare': 0, 'uncommon': 0, 'common': 0 });
 addRarityPercentForLayer('legendary', 'earrings', {'super legendary': 1, 'legendary': 37, 'rare': 7, 'uncommon': 5, 'common': 50 });
 addRarityPercentForLayer('legendary', 'eyes', {'super legendary': 7, 'legendary': 71, 'rare': 12, 'uncommon': 7, 'common': 3 });

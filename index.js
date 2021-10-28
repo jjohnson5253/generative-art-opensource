@@ -23,7 +23,7 @@ let randomEditionArray = [];
 // func to fill the random edition array with all possible values given
 // start and stop editions
 const fillRandomEditionArray = (_arr) => {
-  for(let i = startEditionFrom; i<editionSize+1; i++)
+  for(let i = 8888; i<9776; i++)
   {
     _arr.push(i);
   }
@@ -93,11 +93,10 @@ const generateMetadata = (_dna, _edition, _attributesList) => {
   let dateTime = Date.now();
   let tempMetadata = {
     name: `Bear Rug ${_edition}`,
-    symbol: ``,
+    symbol: `BRC`,
     description: description,
-    seller_fee_basis_points: 750,
+    seller_fee_basis_points: 500,
     image: "image.png",
-    external_url: "https://www.bearrugsnft.xyz/",
     attributes: _attributesList,
     collection: {
       name: `Bear Rugs Gen 1`,
@@ -294,7 +293,7 @@ const startCreating = async () => {
   //let editionCount = 9;
   while (editionCount <= editionSize) {
     console.log('-----------------')
-    console.log('creating NFT %d of %d', editionCount, editionSize);
+    console.log('creating NFT %d of %d', editionCount, editionSize+startEditionFrom);
 
     // get rarity from to config to create NFT as
     let rarity = getRarity(editionCount);
@@ -339,15 +338,19 @@ const startCreating = async () => {
       // This way candy machine rarity isn't based on order of mint
       let randomEditionNumber = getRandomEdition(randomEditionArray);
 
+      // want to write 0-887
+      let editionCntToWrite = editionCount;
+      
       // write the image to the output directory with RANDOM edition
-      saveImage(randomEditionNumber);
+      saveImage(editionCntToWrite);
 
       // use CURRENT edition in metadata
-      let nftMetadata = generateMetadata(newDna, editionCount, attributesList);
+      let nftMetadata = generateMetadata(newDna, randomEditionNumber, attributesList);
       metadataList.push(nftMetadata)
 
+
       // use same random edition for metadata saved filename
-      fs.writeFileSync("./output/"+randomEditionNumber.toString()+".json", JSON.stringify(nftMetadata));
+      fs.writeFileSync("./output/"+editionCntToWrite.toString()+".json", JSON.stringify(nftMetadata));
       console.log('- metadata: ' + JSON.stringify(nftMetadata));
       console.log('- edition ' + editionCount + ' created.');
       console.log('- random edition ' + randomEditionNumber + ' created.');
