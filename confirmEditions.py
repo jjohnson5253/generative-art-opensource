@@ -2,8 +2,10 @@
 
 import os
 
-directory = './output_test'
+directory = './output_orig'
 fileCnt=0
+beginRange=0
+endRange=8888
 
 # string to hold all metadata
 allMetaData = ""
@@ -23,18 +25,19 @@ for filename in os.listdir(directory):
 		# add metadata to one big string
 		allMetaData+=metadata
 
-#cnt=0
+cnt=0
 
 print("file numbers not found:")
-for i in range(8888, 9776):
-	if str(i) not in allMetaData:
-		print(i)
-		#cnt=cnt+1
+for i in range(beginRange, endRange):
+	bearRugString = "Bear Rug " + str(i)
+	if bearRugString not in allMetaData:
+		#print(i)
+		cnt=cnt+1
 
 # print num of files searched
 print()
 print("files searched:")
 print(fileCnt)
 
-#print("matches:")
-#print(cnt)
+print("files not found:")
+print(cnt)
