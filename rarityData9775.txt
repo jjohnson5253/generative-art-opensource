@@ -1,0 +1,192 @@
+Layer: background
+[
+  { value: 'Dino', percentage: 2.7519181585677748 },
+  { value: 'Lion', percentage: 2.639386189258312 },
+  { value: 'Shark', percentage: 2.762148337595908 },
+  { value: 'Sphinx', percentage: 2.915601023017903 },
+  { value: 'Desert', percentage: 1.7391304347826086 },
+  { value: 'Forest', percentage: 2.0153452685421995 },
+  { value: 'Disco', percentage: 6.639386189258312 },
+  { value: 'Raindrop', percentage: 7.017902813299233 },
+  { value: 'Ribbon', percentage: 6.854219948849105 },
+  { value: 'Galaxy', percentage: 15.375959079283888 },
+  { value: 'Splatter', percentage: 14.578005115089516 },
+  { value: 'Burnt Orange', percentage: 7.038363171355498 },
+  { value: 'Dark Green', percentage: 7.028132992327365 },
+  { value: 'Purple', percentage: 6.578005115089514 },
+  { value: 'Red', percentage: 7.10997442455243 },
+  { value: 'Yellow', percentage: 6.966751918158567 }
+]
+Layer: art
+[
+  { value: 'None', percentage: 82.12787723785166 },
+  { value: 'Autumn', percentage: 2.6189258312020463 },
+  { value: 'Criminals', percentage: 2.629156010230179 },
+  { value: 'Gila Monster', percentage: 2.59846547314578 },
+  { value: 'Graffiti', percentage: 2.5370843989769822 },
+  { value: 'Miner', percentage: 2.731457800511509 },
+  { value: 'Neature', percentage: 2.4143222506393864 },
+  { value: 'Teddy', percentage: 2.3529411764705883 }
+]
+Layer: floor
+[
+  { value: 'Disco', percentage: 4.286445012787723 },
+  { value: 'Sunken Ship Deck', percentage: 3.601023017902813 },
+  { value: 'Wood', percentage: 3.948849104859335 },
+  { value: 'Blue Marble', percentage: 1.554987212276215 },
+  { value: 'Rainbow Royal Rug', percentage: 1.6982097186700766 },
+  { value: 'Persian Rug Blue', percentage: 8.930946291560101 },
+  { value: 'Persian Rug Light', percentage: 8.982097186700768 },
+  { value: 'Checkered Yellow', percentage: 14.240409207161125 },
+  { value: 'Checkered', percentage: 15.34526854219949 },
+  { value: 'Dark Green', percentage: 12.347826086956522 },
+  { value: 'Purple', percentage: 12.624040920716112 },
+  { value: 'Red', percentage: 12.450127877237852 }
+]
+Layer: bear
+[
+  { value: '24k', percentage: 6.015345268542199 },
+  { value: 'Rainbow', percentage: 5.698209718670077 },
+  { value: 'Abalone', percentage: 1.687979539641944 },
+  { value: 'Marble', percentage: 1.647058823529412 },
+  { value: 'Glass', percentage: 5.88235294117647 },
+  { value: 'Panda', percentage: 5.9028132992327365 },
+  { value: 'Zombie', percentage: 6.271099744245524 },
+  { value: 'Gold', percentage: 14.700767263427108 },
+  { value: 'Polar', percentage: 14.80306905370844 },
+  { value: 'Black', percentage: 18.36317135549872 },
+  { value: 'Brown', percentage: 19.0383631713555 }
+]
+Layer: figure
+[
+  { value: 'Austin Powers', percentage: 2.976982097186701 },
+  { value: 'Beyoncé', percentage: 2.8849104859335037 },
+  { value: 'Burt Reynolds', percentage: 2.8849104859335037 },
+  { value: 'Jane Goodall', percentage: 2.710997442455243 },
+  { value: 'Pulp Fiction', percentage: 2.7519181585677748 },
+  { value: 'Elizabeth', percentage: 2.567774936061381 },
+  { value: 'None', percentage: 83.23273657289002 }
+]
+Layer: earrings
+[
+  { value: 'Gold Hoop Earring', percentage: 7.856777493606137 },
+  {
+    value: 'Rainbow Earrings Both Ears',
+    percentage: 2.005115089514067
+  },
+  { value: 'Three Earrings Left', percentage: 12.255754475703325 },
+  { value: 'Two Earrings Right', percentage: 28.808184143222505 },
+  { value: 'None', percentage: 49.084398976982094 }
+]
+Layer: eyes
+[
+  { value: 'Colorful Swirly', percentage: 2.629156010230179 },
+  { value: 'Creepy', percentage: 2.731457800511509 },
+  { value: 'Dragon', percentage: 2.8542199488491047 },
+  { value: 'Lizard', percentage: 2.7723785166240407 },
+  { value: 'Chameleon', percentage: 0.5728900255754477 },
+  { value: 'Dead', percentage: 0.6547314578005116 },
+  { value: 'Rainbow', percentage: 0.6240409207161126 },
+  { value: 'Real Blue', percentage: 0.5421994884910486 },
+  { value: 'Real Brown', percentage: 0.4705882352941176 },
+  { value: 'Real Green', percentage: 0.5115089514066496 },
+  { value: 'rainbow Pretty Eyes', percentage: 0.5933503836317136 },
+  { value: 'Blue', percentage: 2.9872122762148337 },
+  { value: 'Bluebird', percentage: 2.976982097186701 },
+  { value: 'Chubby', percentage: 3.1202046035805626 },
+  { value: 'Golden', percentage: 2.9565217391304346 },
+  { value: 'Pretty', percentage: 2.874680306905371 },
+  { value: 'Purple', percentage: 3.0485933503836318 },
+  { value: 'Black Wide', percentage: 3.7851662404092075 },
+  { value: 'Cute', percentage: 3.631713554987212 },
+  { value: 'Giddy', percentage: 3.918158567774936 },
+  { value: 'Hurt', percentage: 3.6521739130434785 },
+  { value: 'Mischievous', percentage: 3.5601023017902813 },
+  { value: 'Scarred', percentage: 3.5703324808184145 },
+  { value: 'Sleepy', percentage: 3.416879795396419 },
+  { value: 'Swirly', percentage: 3.5396419437340154 },
+  { value: 'Bashful', percentage: 12.255754475703325 },
+  { value: 'Black', percentage: 12.153452685421994 },
+  { value: 'Wide', percentage: 13.606138107416879 }
+]
+Layer: nose
+[
+  { value: 'Cute', percentage: 3.4782608695652173 },
+  { value: 'Star', percentage: 9.166240409207163 },
+  { value: 'Triangle', percentage: 2.629156010230179 },
+  { value: 'Rectangle', percentage: 1.9130434782608694 },
+  { value: 'Round', percentage: 0.9514066496163683 }
+]
+Layer: glasses
+[
+  { value: 'Avocado', percentage: 2.833759590792839 },
+  { value: 'Fire', percentage: 2.557544757033248 },
+  { value: 'Rocker', percentage: 2.342710997442455 },
+  { value: 'Money', percentage: 0.9207161125319693 },
+  { value: 'Rainbow', percentage: 0.9309462915601023 },
+  { value: 'Anonymous', percentage: 1.0741687979539642 },
+  { value: 'Beauty', percentage: 0.9718670076726342 },
+  { value: 'Desert', percentage: 1.237851662404092 },
+  { value: 'Pirate Eye Patch', percentage: 0.9616368286445012 },
+  { value: 'Purple Heart', percentage: 1.1048593350383633 },
+  { value: 'Red Sports Sunglasses', percentage: 1.278772378516624 },
+  { value: 'Shooting Star', percentage: 0.8797953964194373 },
+  { value: 'Star', percentage: 1.1150895140664963 },
+  { value: 'Steampunk', percentage: 1.0639386189258313 },
+  { value: 'Stylish', percentage: 0.9923273657289002 },
+  { value: 'Xtreme Sports', percentage: 1.1457800511508953 },
+  { value: 'Librarian', percentage: 5.841432225063939 },
+  { value: 'Monocle', percentage: 5.759590792838875 },
+  { value: 'Nerd', percentage: 5.698209718670077 },
+  { value: 'Square Lens Clear', percentage: 5.7698209718670075 },
+  { value: 'Square Lens Red', percentage: 5.616368286445013 },
+  { value: 'None', percentage: 49.913043478260875 }
+]
+Layer: hat
+[
+  { value: 'Crown', percentage: 0.3069053708439898 },
+  { value: 'Dunce Cap', percentage: 0.3171355498721228 },
+  { value: 'Fruit', percentage: 0.4808184143222506 },
+  { value: 'Mushroom', percentage: 0.34782608695652173 },
+  { value: 'Musketeer', percentage: 0.2966751918158568 },
+  { value: 'Napoleon', percentage: 0.45012787723785164 },
+  { value: 'Princess', percentage: 0.2659846547314578 },
+  { value: 'Viking Helmet', percentage: 0.3069053708439898 },
+  { value: 'Fez', percentage: 1.381074168797954 },
+  { value: 'Red Bandana', percentage: 1.5345268542199488 },
+  { value: 'Sick', percentage: 1.29923273657289 },
+  { value: 'Bucket Hat', percentage: 2.0664961636828645 },
+  { value: 'Cowboy', percentage: 2.1278772378516626 },
+  { value: 'Green Mohawk', percentage: 2.1278772378516626 },
+  { value: 'Jester', percentage: 2.1585677749360612 },
+  { value: 'Sailor', percentage: 2.342710997442455 },
+  { value: 'Pirate Captain', percentage: 8.20460358056266 },
+  { value: 'Poet', percentage: 8.306905370843989 },
+  { value: 'Roses', percentage: 8.583120204603581 },
+  { value: 'Top Hat', percentage: 7.8874680306905365 },
+  { value: 'None', percentage: 49.21739130434782 }
+]
+Layer: mouth
+[
+  { value: 'Lip Bite', percentage: 4.153452685421994 },
+  { value: 'Smily Fangs', percentage: 4 },
+  { value: 'Sneaky Smile', percentage: 3.918158567774936 },
+  { value: 'Clothing Bite', percentage: 1.9641943734015344 },
+  { value: 'Vampire', percentage: 1.4833759590792839 },
+  { value: 'Big Lips', percentage: 2.0971867007672635 },
+  { value: 'Cigarette', percentage: 2.1381074168797953 },
+  { value: 'Drooling', percentage: 2.741687979539642 },
+  { value: 'Kissy', percentage: 2.0358056265984654 },
+  { value: 'Red Lipstick', percentage: 2.2506393861892584 },
+  { value: 'Smiley', percentage: 2.312020460358056 },
+  { value: 'Smiling Teeth', percentage: 2.2199488491048593 },
+  { value: 'Straw', percentage: 1.9232736572890023 },
+  { value: 'Growling', percentage: 6.046035805626598 },
+  { value: 'Happy', percentage: 6.015345268542199 },
+  { value: 'Passive', percentage: 6.179028132992327 },
+  { value: 'Teeth Grinding Dark', percentage: 5.923273657289003 },
+  { value: 'Teeth Grinding', percentage: 5.565217391304348 },
+  { value: 'Bored', percentage: 12.27621483375959 },
+  { value: 'Excited', percentage: 12.265984654731458 },
+  { value: 'Frowny', percentage: 12.501278772378516 }
+]
